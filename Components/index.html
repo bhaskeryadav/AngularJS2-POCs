@@ -1,0 +1,44 @@
+<html>
+
+  <head>
+    <title>Angular 2 QuickStart</title>
+
+    <!-- 1. Load libraries -->
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/angular2/http.js"></script>
+    <script src="node_modules/systemjs/test/tests/commonjs-requires.js"></script>
+<script src="https://npmcdn.com/a2-in-memory-web-api/web-api.js"></script>
+
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+      System.config({
+        packages: {        
+          app: {
+            format: 'register',
+            defaultExtension: 'js'
+          }
+        }
+      });
+      System.import('app/boot')
+            .then(null, console.error.bind(console));
+    </script>
+
+  </head>
+
+  <!-- 3. Display the application -->
+  <body>
+    <!--<my-app>Loading...</my-app>-->
+  <!--   <asset-textField fieldLabel="bhasker">dasa</asset-textField>
+      <asset-oit assetId="userName" assetLabel="UserName:" assetTextHint="Enter your user name" 
+                assetTootTip="Please enter your user name here" [(bindModelData)]="userName"></asset-oit>-->
+                
+    <!--<my-wiki>Wiki Loading...</my-wiki>-->
+    <asset-oac></asset-oac>
+  </body>
+
+</html>
