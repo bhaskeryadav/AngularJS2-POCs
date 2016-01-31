@@ -15,7 +15,7 @@ import {OacService} from './oac.service';
   width: auto;
   height: auto;
   z-index: 10;
-  background-color: rgba(128,128,128,1.0);
+  background-color: rgba(241,238,238,1.0);
 }
   `]
 })

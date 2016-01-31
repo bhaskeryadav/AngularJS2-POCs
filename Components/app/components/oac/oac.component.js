@@ -48,7 +48,7 @@ System.register(['angular2/core', 'angular2/http', './oac.service'], function(ex
                         selector: 'asset-oac',
                         templateUrl: 'app/components/oac/oactemplate.html',
                         providers: [http_1.HTTP_PROVIDERS, oac_service_1.OacService],
-                        styles: ["\n  .overlay{\n  position: absolute;\n  top: auto;\n  left: auto;\n  width: auto;\n  height: auto;\n  z-index: 10;\n  background-color: rgba(128,128,128,1.0);\n}\n  "]
+                        styles: ["\n  .overlay{\n  position: absolute;\n  top: auto;\n  left: auto;\n  width: auto;\n  height: auto;\n  z-index: 10;\n  background-color: rgba(241,238,238,1.0);\n}\n  "]
                     }), 
                     __metadata('design:paramtypes', [oac_service_1.OacService])
                 ], OacComponent);
