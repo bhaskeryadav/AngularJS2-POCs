@@ -14,9 +14,9 @@ export class OacService {
         params.set('search', term);
 
 
-        let wikiUrl = 'http://localhost:8080/test?search='+term;
+        let serviceUrl = 'http://localhost:8080/getAutoCompleteData?search='+term;
         this.ot = this.http
-            .get(wikiUrl)
+            .get(serviceUrl)
             .map(request => request.json())
             ;
 
