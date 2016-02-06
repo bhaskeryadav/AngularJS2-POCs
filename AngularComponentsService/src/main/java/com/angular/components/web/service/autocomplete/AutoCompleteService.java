@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.angular.components.web.dummy.pojo.Person;
 
-
 @RestController
 public class AutoCompleteService {
 
