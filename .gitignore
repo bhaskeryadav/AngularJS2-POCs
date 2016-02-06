@@ -1,0 +1,5 @@
+node_modules
+.mvn
+.settings
+/AngularComponentsService/*.classpath
+/AngularComponentsService/*.project
