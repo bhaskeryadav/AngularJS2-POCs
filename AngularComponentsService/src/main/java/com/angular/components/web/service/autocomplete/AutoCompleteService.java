@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -68,4 +70,27 @@ public class AutoCompleteService {
 	public String getData(){
 		return "Hello";
 	}
+	
+	//TODO: execute the filtering logic
+	/**
+	 * Returns the filtered data POST method
+	 * @param search -- string using which filteration will be done 
+	 * @return
+	 */
+	@CrossOrigin()
+	@RequestMapping(value = { "/getAutoCompleteDataPost" },method = RequestMethod.POST,headers="Accept=application/json")
+	public  List<Person> getAutoCompleteDataPost(@RequestParam(value="search", defaultValue="*") String search,HttpServletRequest request ){
+		log.info("getAutoCompleteData is invoked with parameter "+search);
+		
+		//return all data if search string is *
+		if(search.equals("*")){
+			return dummyData;
+		}
+		
+		List<Person> filteredList=dummyData.stream().filter(person-> person.getName().contains(search)).collect(Collectors.toList());
+		
+		return filteredList;
+	}
+	
+	
 }
