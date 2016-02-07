@@ -77,7 +77,7 @@ public class AutoCompleteService {
 	 * @param search -- string using which filteration will be done 
 	 * @return
 	 */
-	@CrossOrigin()
+	@CrossOrigin(allowedHeaders={"POST"})
 	@RequestMapping(value = { "/getAutoCompleteDataPost" },method = RequestMethod.POST,headers="Accept=application/json")
 	public  List<Person> getAutoCompleteDataPost(@RequestParam(value="search", defaultValue="*") String search,HttpServletRequest request ){
 		log.info("getAutoCompleteData is invoked with parameter "+search);
