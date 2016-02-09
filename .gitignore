@@ -6,3 +6,4 @@ node_modules
 webapp
 /Components/app/*.js
 /Components/app/*.map
+/Components/*.log

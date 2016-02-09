@@ -1,5 +1,5 @@
 import {Injectable} from 'angular2/core';
-import { URLSearchParams, Http, HTTP_PROVIDERS,Request,RequestMethod,Headers} from 'angular2/http';
+import {RequestOptions, URLSearchParams, Http, HTTP_PROVIDERS,Request,RequestMethod,Headers} from 'angular2/http';
 import 'rxjs/add/operator/map';
 import {Observable}       from 'rxjs/Observable';
 
@@ -9,19 +9,18 @@ export class OacService {
     ot: Observable<string>;
 
     search(term: string) {
-
+        //For get method  
         /*let serviceUrl = 'http://localhost:8080/getAutoCompleteData?search=' + term;
         this.ot = this.http
             .get(serviceUrl)
             .map(response => response.json());*/
-            
+        
+        //for post method    
         let serviceUrl = 'http://localhost:8080/getAutoCompleteDataPost';
-        var headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('search',term)
-       // headers.append('Access-Control-Allow-Methods','GET, POST, OPTIONS');
+        var params = new URLSearchParams();
+        params.set('search', term);
     
-        this.ot = this.http.post(serviceUrl,'search='+term,headers).map(response => response.json());
+        this.ot = this.http.post(serviceUrl,"",new RequestOptions({search:params})).map(response => response.json());
              
         return this.ot;
     }

@@ -1,6 +1,7 @@
 package com.angular.components.web.service.autocomplete;
 
 import java.util.ArrayList;
+import java.util.Enumeration;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -73,7 +74,7 @@ public class AutoCompleteService {
 	
 	//TODO: execute the filtering logic
 	/**
-	 * Returns the filtered data POST method
+	 * Returns the filtered data (POST method)
 	 * @param search -- string using which filteration will be done 
 	 * @return
 	 */
@@ -81,6 +82,12 @@ public class AutoCompleteService {
 	@RequestMapping(value = { "/getAutoCompleteDataPost" },method = RequestMethod.POST,headers="Accept=application/json")
 	public  List<Person> getAutoCompleteDataPost(@RequestParam(value="search", defaultValue="*") String search,HttpServletRequest request ){
 		log.info("getAutoCompleteData is invoked with parameter "+search);
+		
+		request.getParameterMap().forEach((k,v) -> System.out.print(k+" : "+v));
+/*		Enumeration<String> enu=request.getAttributeNames();
+		while(enu.hasMoreElements()){
+			System.out.println(enu.nextElement());
+		}*/
 		
 		//return all data if search string is *
 		if(search.equals("*")){
